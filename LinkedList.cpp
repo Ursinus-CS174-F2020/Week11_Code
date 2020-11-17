@@ -13,34 +13,34 @@ bool isEven(int x) {
 
 Node::Node(int value) {
     this->value = value;
-    next = nullptr;
+    next = NULL;
 }
 
 
 LinkedList::LinkedList() {
-    head = nullptr;
+    head = NULL;
 }
 
 LinkedList::~LinkedList() {
-    while (head != nullptr) {
+    while (head != NULL) {
         removeFirst();
     }
 }
 
 bool LinkedList::isEmpty() {
-    return head == nullptr;
+    return head == NULL;
 }
 
 void LinkedList::addLast(int value) {
     Node* newNode = new Node(value);
-    if (head == nullptr){
+    if (head == NULL){
         head = newNode;
     }
     else {
         Node* node = head;
         // Go until I find the end of the list
         // where the arrow points to nothing
-        while (node->next != nullptr) {
+        while (node->next != NULL) {
             node = node->next;
         }
         node->next = newNode;
@@ -55,7 +55,7 @@ void LinkedList::addFirst(int value) {
 
 int LinkedList::removeFirst() {
     int ret = -1;
-    if (head != nullptr) {
+    if (head != NULL) {
         ret = head->value;
         Node* newHead = head->next;
         delete head;
@@ -66,9 +66,9 @@ int LinkedList::removeFirst() {
 
 void LinkedList::printList() {
     Node* node = head;
-    while (node != nullptr) {
+    while (node != NULL) {
         printf("%i", node->value);
-        if (node->next != nullptr) {
+        if (node->next != NULL) {
             printf(", ");
         }
         node = node->next;
