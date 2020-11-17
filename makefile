@@ -1,7 +1,10 @@
 CC=g++
-CFLAGS=-std=c++11 -g -Wall
+CFLAGS=-std=c++0x -g -Wall
 
-all: driver guard
+all: driver guard twitter
+
+twitter: tweets.cpp
+	$(CC) $(CFLAGS) -o tweets tweets.cpp
 
 Linkedlist.o: LinkedList.h LinkedList.cpp
 	$(CC) $(CFLAGS) -c LinkedList.cpp 
